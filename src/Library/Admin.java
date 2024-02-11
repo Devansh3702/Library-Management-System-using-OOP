@@ -50,4 +50,8 @@ public class Admin extends User {
         s.close();
 
     }
+
+    public String toString(){
+       return name + "<N/>" + email + "<N/>" + phoneNumber+ "<N/>" + "Admin";
+    }
 }

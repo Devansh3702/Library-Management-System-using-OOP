@@ -44,5 +44,7 @@ public abstract class User {
         this.phoneNumber = phoneNumber;
     }
 
+    abstract public String toString();
+
     abstract public void menu(Database db, User user);
 }

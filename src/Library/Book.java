@@ -96,4 +96,11 @@ public class Book {
     public void setCopiesToBorrow(int copiesToBorrow) {
         this.copiesToBorrow = copiesToBorrow;
     }
+
+    public String toString2() {
+
+        return name + "<N/>" + author + "<N/>" + publisher + "<N/>" + address + "<N/>" + String.valueOf(qty) + "<N/>" + String.valueOf(price) + "<N/>" + String.valueOf(copiesToBorrow);
+    }
+
+
 }
