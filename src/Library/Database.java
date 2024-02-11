@@ -13,7 +13,6 @@ public class Database {
     private ArrayList<Book> books = new ArrayList<>();
     private ArrayList<String> bookNames = new ArrayList<>();
 
-    //    private File usersFile = new File(Main.class.getClassLoader().getResource("Users").getFile());
     private File usersFile = new File("src/Users");
     private File booksFile = new File("src/Books");
 
@@ -153,5 +152,29 @@ public class Database {
         book.setPrice(Double.parseDouble(a[5]));
         book.setCopiesToBorrow(Integer.parseInt(a[6]));
         return book;
+    }
+
+    public ArrayList<Book> getAllBooks() {
+        return books;
+    }
+
+    public int getBook(String name) {
+        for (Book book : books) {
+            if (book.getName().matches(name)) {
+                return books.indexOf(book);
+            }
+        }
+        return -1;
+    }
+
+    public void deleteBook(int ndx){
+        books.remove(ndx);
+        bookNames.remove(ndx);
+        saveBooks();
+
+    }
+
+    public Book getBook(int ndx){
+        return books.get(ndx);
     }
 }
